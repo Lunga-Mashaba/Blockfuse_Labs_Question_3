@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a2980, #26d0ce);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: #f1c40f;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+}
+
+.subtitle {
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: #e74c3c;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.status-dot.connected {
+    background: #2ecc71;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.controls {
+    padding: 20px;
+    background: #f8f9fa;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+.btn-secondary {
+    background: #e74c3c;
+}
+
+.btn-secondary:hover {
+    background: #c0392b;
+}
+
+.stats {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #666;
+}
+
+.matches-grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.match-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid #e0e0e0;
+    transition: transform 0.3s;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    border-color: #3498db;
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.competition {
+    background: #9b59b6;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.match-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.team-logo {
+    width: 50px;
+    height: 50px;
+    background: #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.home-team .team-logo {
+    background: #e74c3c;
+}
+
+.away-team .team-logo {
+    background: #2ecc71;
+}
+
+.team-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.score {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.score-numbers {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.home-score, .away-score {
+    font-size: 3rem;
+    font-weight: bold;
+    min-width: 50px;
+}
+
+.score-update {
+    animation: scoreFlash 0.5s;
+}
+
+@keyframes scoreFlash {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); color: #e74c3c; }
+    100% { transform: scale(1); }
+}
+
+.score-label {
+    color: #3498db;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.goal-timeline {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.goal-timeline h4 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.timeline-content {
+    min-height: 40px;
+}
+
+.no-goals {
+    color: #95a5a6;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+}
+
+.goal-event {
+    background: #f8f9fa;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-left: 3px solid #2ecc71;
+}
+
+.goal-event.home-goal {
+    border-left-color: #e74c3c;
+}
+
+.goal-event.away-goal {
+    border-left-color: #3498db;
+}
+
+.events-section {
+    padding: 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+.events-section h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.events-list {
+    background: white;
+    border-radius: 5px;
+    padding: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.event-item {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.timestamp {
+    margin-top: 5px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #95a5a6;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .matches-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .teams {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .score {
+        order: -1;
+        padding: 20px 0;
+    }
+}

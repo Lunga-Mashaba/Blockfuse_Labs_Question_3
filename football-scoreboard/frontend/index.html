@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚽ Live Football Scoreboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-futbol"></i>
+                    <h1>Live Football Scoreboard</h1>
+                </div>
+                <div class="connection-status" id="connectionStatus">
+                    <span class="status-dot"></span>
+                    <span>Connecting...</span>
+                </div>
+            </div>
+            <p class="subtitle">Real-time updates every 3-5 seconds ⚡</p>
+        </header>
+
+        <div class="controls">
+            <button id="refreshBtn" class="btn">
+                <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+            <button id="addGoalBtn" class="btn btn-secondary">
+                <i class="fas fa-plus"></i> Add Goal
+            </button>
+            <div class="stats">
+                <span><i class="fas fa-clock"></i> Updates: <span id="updateCount">0</span></span>
+            </div>
+        </div>
+
+        <div class="matches-grid" id="matchesContainer">
+            <!-- Matches will be loaded here -->
+        </div>
+
+        <div class="events-section">
+            <h2><i class="fas fa-history"></i> Live Events</h2>
+            <div class="events-list" id="eventsList">
+                <div class="event-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Waiting for events...</span>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>⚽ Blockfuse Labs Cohort IV - Live Scoreboard</p>
+            <p class="timestamp" id="currentTime"></p>
+        </footer>
+    </div>
+
+    <template id="matchTemplate">
+        <div class="match-card">
+            <div class="match-header">
+                <span class="competition"></span>
+                <div class="match-status">
+                    <span class="status-dot live"></span>
+                    <span class="status-text"></span>
+                    <span class="match-minute"></span>
+                </div>
+            </div>
+            
+            <div class="teams">
+                <div class="team home-team">
+                    <div class="team-logo"></div>
+                    <div class="team-info">
+                        <h3 class="team-name"></h3>
+                    </div>
+                </div>
+                
+                <div class="score">
+                    <div class="score-numbers">
+                        <span class="home-score">0</span>
+                        <span class="score-divider">-</span>
+                        <span class="away-score">0</span>
+                    </div>
+                    <div class="score-label">LIVE</div>
+                </div>
+                
+                <div class="team away-team">
+                    <div class="team-info">
+                        <h3 class="team-name"></h3>
+                    </div>
+                    <div class="team-logo"></div>
+                </div>
+            </div>
+            
+            <div class="goal-timeline">
+                <h4>Goals</h4>
+                <div class="timeline-content">
+                    <div class="no-goals">No goals yet</div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
